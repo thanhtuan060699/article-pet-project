@@ -12,6 +12,7 @@ import "tailwindcss/tailwind.css";
 const Home: NextPage = () => {
   const router = useRouter();
   let dataDate = {
+    key: 1,
     datasets: [
       {
         label: "Posts in day",
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
   };
 
   let dataCate = {
+    key: 2,
     datasets: [
       {
         label: "Posts of Category",
@@ -46,7 +48,7 @@ const Home: NextPage = () => {
       dataDate.datasets[0].data = response.data.result.data;
       dataDate.labels = response.data.result.days;
       dataDate.key = Date.now();
-      setDataDay(dataDate);
+      setDataDay({...dataDate});
     });
   };
   const getStatisticCategory = async (startDate: any, toDate: any) => {
@@ -55,7 +57,7 @@ const Home: NextPage = () => {
     dataCate.datasets[0].data = responseCate.data.r.map((i: any) => i.count);
     dataCate.labels = responseCate.data.r.map((i: any) => i._id.category);
     dataCate.key = Date.now();
-    setDataCategory(dataCate);
+    setDataCategory({...dataCate});
   };
   useEffect(() => {
     (async function getData() {

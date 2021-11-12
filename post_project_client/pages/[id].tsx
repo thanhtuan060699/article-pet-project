@@ -50,7 +50,7 @@ const Home: NextPage = () => {
             className="px-6 py-2 border-solid bg-green-500 text-white rounded"
           >
             Edit Post
-          </button>0
+          </button>
           <button
             onClick={() => router.push(`/chart`)}
             className="px-6 py-2 border-solid bg-red-400 text-white rounded"

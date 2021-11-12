@@ -74,12 +74,13 @@ const Home: NextPage = () => {
               <Select
                 options={CATEGORIES}
                 name="category"
-                onChange={handleChange}
+                onChange={(cate)=>setFieldValue("category",cate)}
                 value={values.category}
+                className="z-10"
               />
-              {errors.category ? (
+              {errors.category && (
                 <div className="text-red-600 text-sm">{errors.category}</div>
-              ) : null}
+              )}
             </div>
             <label className="w-1/2 mt-6 ml-6">
               <input
