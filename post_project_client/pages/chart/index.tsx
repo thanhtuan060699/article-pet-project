@@ -104,7 +104,7 @@ const Home: NextPage = () => {
             </button>
             <button
               onClick={() => router.push(`/`)}
-              className="px-6 py-2 border-solid bg-red-40 text-white rounded"
+              className="px-6 py-2 border-solid bg-red-400 text-white rounded"
             >
               Create post
             </button>
